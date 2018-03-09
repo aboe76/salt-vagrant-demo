@@ -1,7 +1,5 @@
 log_user_access:
   local.cmd.run:
-    - name: log user acdess
-    - target: 'master'
+    - tgt: 'master'
     - arg:
-      - 'echo "[{{ data['data']['user'] }} logged in to {{ data['data']['id'] }} at {{ data['_stamp'] }}" > /tmp/access_log'
-
+      - echo "{{ data['user'] }} logged in to {{ data['id'] }} at {{ data['_stamp'] }}" >> /tmp/access_log
