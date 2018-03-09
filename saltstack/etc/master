@@ -437,7 +437,7 @@ gitfs_provider: gitpython
 #  - git://github.com/saltstack/salt-states.git
 #  - file:///var/git/saltmaster
 gitfs_remotes:
-  - git@github.com:salt-formulas/salt-formula.git
+  - https://github.com/saltstack-formulas/salt-formula.git
 #
 # The gitfs_ssl_verify option specifies whether to ignore ssl certificate
 # errors when contacting the gitfs backend. You might want to set this to
