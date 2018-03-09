@@ -1,8 +1,8 @@
 base:
   '*':
     - default
-    - saltcommon
+    - salt.common
   'master':
-    - saltmaster
+    - salt.master
   'minion*':
-    - saltminion
+    - salt.minion

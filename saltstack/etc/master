@@ -438,6 +438,7 @@ gitfs_provider: gitpython
 #  - file:///var/git/saltmaster
 gitfs_remotes:
   - https://github.com/saltstack-formulas/salt-formula.git
+  - https://github.com/saltstack-formulas/vim-formula.git
 #
 # The gitfs_ssl_verify option specifies whether to ignore ssl certificate
 # errors when contacting the gitfs backend. You might want to set this to
@@ -644,6 +645,12 @@ gitfs_remotes:
 #win_gitrepos:
 #  - 'https://github.com/saltstack/salt-winrepo.git'
 
+beacons:
+  wtmp: {}
+
 reactor:
   - 'salt/fileserver/gitfs/update':
     - /srv/reactor/update_fileserver.sls
+  - 'salt/beacon/*/wtmp/*':
+    - /srv/reactor/logins.sls
+

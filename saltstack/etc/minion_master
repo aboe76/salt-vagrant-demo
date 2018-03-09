@@ -571,3 +571,6 @@ id: master
 ############################################
 # Location of the repository cache file on the master:
 #win_repo_cachefile: 'salt://win/repo/winrepo.p'
+
+beacons:
+  wtmp: {}
