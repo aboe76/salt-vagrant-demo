@@ -344,9 +344,9 @@
 #     - /srv/salt/prod/services
 #     - /srv/salt/prod/states
 
-#file_roots:
-#  base:
-#    - /srv/salt
+file_roots:
+  base:
+    - /srv/salt
 
 # The hash_type is the hash to use when discovering the hash of a file on
 # the master server. The default is md5, but sha1, sha224, sha256, sha384
@@ -391,8 +391,8 @@
 #
 # To use multiple backends list them in the order they are searched:
 fileserver_backend:
-  - git
   - roots
+  - git
 #
 # Uncomment the line below if you do not want the file_server to follow
 # symlinks when walking the filesystem tree. This is set to True
@@ -422,7 +422,7 @@ fileserver_backend:
 #
 # Gitfs can be provided by one of two python modules: GitPython or pygit2. If
 # using pygit2, both libgit2 and git must also be installed.
-#gitfs_provider: gitpython
+gitfs_provider: gitpython
 #
 # When using the git fileserver backend at least one git remote needs to be
 # defined. The user running the salt master will need read access to the repo.
@@ -437,7 +437,7 @@ fileserver_backend:
 #  - git://github.com/saltstack/salt-states.git
 #  - file:///var/git/saltmaster
 gitfs_remotes:
-  - https://github.com/salt-formulas/salt-formula.git
+  - git@github.com:salt-formulas/salt-formula.git
 #
 # The gitfs_ssl_verify option specifies whether to ignore ssl certificate
 # errors when contacting the gitfs backend. You might want to set this to
